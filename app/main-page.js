@@ -11,18 +11,13 @@ JavaScript modules defined in other files.
 */
 var createViewModel = require("./main-view-model").createViewModel;
 
-let worker;
+const ha = require("./primary");
 
-if (global.TNS_WEBPACK) {
-    console.log("---> webpack on");
-    const MyWorker = require("nativescript-worker-loader!./worker.js");
-    worker = new MyWorker();
-} else {
-    console.log("---> webpack off");
-    worker = new Worker("./worker.js");
-}
+// foreground thread
+ha(false);
 
-worker.postMessage({ a: 1 });
+// background thread
+ha(true);
 
 function onNavigatingTo(args) {
 

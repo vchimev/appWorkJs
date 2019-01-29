@@ -1,6 +1,4 @@
-require("globals");
+let ha = require("./primary");
 
-global.onmessage = function(msg) {
-    console.log("Inside JS worker ...");
-    console.log(msg);
-}
+// print "Handle Awesomeness"
+ha();
