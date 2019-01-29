@@ -16,7 +16,8 @@
         "tns-core-modules": "~5.1.0"
     },
     "devDependencies": {
-        "nativescript-dev-webpack": "~0.19.0"
+        "nativescript-dev-webpack": "~0.19.0",
+        "nativescript-worker-loader": "^0.9.2"
     },
     "readme": "NativeScript Application"
 }
