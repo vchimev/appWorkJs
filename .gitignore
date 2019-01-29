@@ -1,4 +1,8 @@
 hooks
-node_modules
+node_modules/*
+!node_modules/nativescript-worker-loader
+node_modules/nativescript-worker-loader/*
+!node_modules/nativescript-worker-loader/index.js
+!node_modules/nativescript-worker-loader/NativeScriptWorkerPlugin.js
 platforms
 
