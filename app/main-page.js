@@ -8,10 +8,24 @@ logic, and to set up your page’s data binding.
 NativeScript adheres to the CommonJS specification for dealing with
 JavaScript modules. The CommonJS require() function is how you import
 JavaScript modules defined in other files.
-*/ 
+*/
 var createViewModel = require("./main-view-model").createViewModel;
 
+let worker;
+
+if (global.TNS_WEBPACK) {
+    console.log("---> webpack on");
+    const MyWorker = require("nativescript-worker-loader!./worker.js");
+    worker = new MyWorker();
+} else {
+    console.log("---> webpack off");
+    worker = new Worker("./worker.js");
+}
+
+worker.postMessage({ a: 1 });
+
 function onNavigatingTo(args) {
+
     /*
     This gets a reference this page’s <Page> UI component. You can
     view the API reference of the Page to see what’s available at
