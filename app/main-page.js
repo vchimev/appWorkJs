@@ -11,13 +11,15 @@ JavaScript modules defined in other files.
 */
 var createViewModel = require("./main-view-model").createViewModel;
 
-const ha = require("./primary");
+const doWork = require("./do-work");
+const ha = require("./wrapper");
 
 // foreground thread
-ha(false);
+doWork();
 
 // background thread
-ha(true);
+ha();
+
 
 function onNavigatingTo(args) {
 

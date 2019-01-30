@@ -1,4 +1,2 @@
-let ha = require("./primary");
-
-// print "Handle Awesomeness"
-ha();
+let doWork = require("./do-work");
+doWork();
